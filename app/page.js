@@ -1,90 +1,33 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import Image from 'next/image';
+import CardItem from './CardItem';
+import { FiSearch } from "react-icons/fi";
 
-const inter = Inter({ subsets: ['latin'] })
+import { constants } from './constants';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className='flex flex-col w-full min-h-screen justify-center items-center pt-16'>
+      <div className='flex flex-col w-[500px] md:w-[1000px]'>
+        <div className='text-3xl text-primary font-bold'>
+          Search Token
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
+        <div className='text-lg text-primary mb-2'>
+          Trade any token by pasting an address
         </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <div className="flex flex-row w-full bg-slate-100 rounded-full items-center mb-4">
+            <input type='text' placeholder="0x0e4drf..." className="px-4 py-3 flex-grow bg-slate-100 rounded-full" />
+            <button className='px-6 flex flex-row items-center gap-2'>
+              <FiSearch className='text-primary-dark text-xl'/>
+              <div className='text-lg text-primary font-medium'> Search </div>
+            </button>
+        </div>
+        <div className='flex flex-row w-full flex-wrap'>
+          {constants.addresses.map((item) => {
+            return (
+              <CardItem key={item.name} address={item}/>
+            );
+          })}
+        </div>
       </div>
     </main>
   )
