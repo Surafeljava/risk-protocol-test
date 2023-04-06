@@ -1,9 +1,18 @@
 const constants = {
     baseUrl: 'http://161.35.76.93:9000/api/v1',
+    usdc: {
+        name: 'USDC',
+        address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+        imageUrl: '/crypto/usdc.png',
+        color: '#ffeeae',
+        secondaryColor: '#f0ba0c',
+        symbol: "USDC",
+        decimals: 18,
+    },
     addresses: [
         {
             name: 'ETH',
-            address: '0xc778417E063141139Fce010982780140Aa0cD5Ab',
+            address: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
             imageUrl: '/crypto/eth.png.webp',
             color: '#d6def9',
             secondaryColor: '#454a75',
@@ -20,6 +29,15 @@ const constants = {
             decimals: 18,
         },
         {
+            name: 'BNB',
+            address: '0xB8c77482e45F1F44dE1745F52C74426C631bDD52',
+            imageUrl: '/crypto/bnb.png',
+            color: '#ffeeae',
+            secondaryColor: '#f0ba0c',
+            symbol: "BNB",
+            decimals: 18,
+        },
+        {
             name: 'POLYGON',
             address: '0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0',
             imageUrl: '/crypto/matic.png',
@@ -30,16 +48,16 @@ const constants = {
         },
         {
             name: 'WBTC',
-            address: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
+            address: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
             imageUrl: '/crypto/wbtc.png',
             color: '#fff1db',
             secondaryColor: '#454a75',
             symbol: "WBTC",
-            decimals: 6,
+            decimals: 8,
         },
         {
             name: 'UNI',
-            address: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
+            address: '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
             imageUrl: '/crypto/uni.png',
             color: '#fcdeec',
             secondaryColor: '#454a75',
@@ -48,7 +66,7 @@ const constants = {
         },
         {
             name: 'SUSHI',
-            address: '0x6b3595068778dd592e39a122f4f5a5cf09c90fe2',
+            address: '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2',
             imageUrl: '/crypto/sushi.png',
             color: '#bac4fc',
             secondaryColor: '#454a75',

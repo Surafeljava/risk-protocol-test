@@ -27,8 +27,13 @@ export default function MarketPage({params}) {
     return (
         <main className='flex flex-col w-full min-h-screen justify-center items-center pt-16 gap-2'>
 
-            <div className='text-3xl text-primary font-bold'>
-                {token}
+            <div className="flex flex-row gap-1 items-center">
+                <div className='text-3xl text-primary font-bold'>
+                    {buy?.name}
+                </div>
+                <div className='text-2xl text-primary font-medium'>
+                    - {sell?.name}
+                </div>
             </div>
             <div className='text-lg text-primary mb-2'>
                 Select the pair
@@ -38,7 +43,7 @@ export default function MarketPage({params}) {
                 <div className='flex flex-col w-[400px] items-start'>
 
 
-                    <div className="flex flex-col w-full bg-white shadow-md rounded-xl p-4 gap-2">
+                    <div className="flex flex-col w-full bg-white shadow-md rounded-xl p-4 gap-2 border-slate-700 border-[2px]">
                         <div className='text-lg text-primary font-medium'>
                             Market
                         </div>
@@ -103,7 +108,7 @@ export default function MarketPage({params}) {
                         )}
 
 
-                        <Link href={`/orderbook?data=${addresses[0].name}`} className='flex flex-row px-4 py-3 rounded-lg bg-primary justify-center'>
+                        <Link href={`/orderbook/${buy?.name}?quoteToken=${buy?.address}&baseToken=${sell?.address}`} className='flex flex-row px-4 py-3 rounded-lg bg-primary justify-center'>
                             <div className='text-base text-white'>
                                 Check Order Book
                             </div>
