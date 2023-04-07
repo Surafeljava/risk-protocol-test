@@ -28,7 +28,7 @@ export default async function OrderBook({params, searchParams}) {
                 Total Records: {data.bids.records.length}
             </div>
 
-            <div className="flex flex-row gap-6 bg-slate-900 p-2 rounded-lg">
+            <div className="flex flex-row gap-6 bg-slate-900 p-2 rounded-lg items-start">
                 <table className="w-1/2 bg-slate-900 text-white text-sm">
                     <tr className=" text-slate-300 mb-2">
                         <th className="text-start font-normal text-sm">Price(USDC)</th>
@@ -58,7 +58,7 @@ export default async function OrderBook({params, searchParams}) {
                     </tr>
                     {data.asks.records.map((record) => {
                         return (
-                            <tr key={record.metaData.orderHash} className="h-8">
+                            <tr key={record.metaData.orderHash} className="h-8 py-2 hover:bg-slate-700 duration-200">
                                 <td className="text-start text-sm" >{record.order.takerAmount}</td>
                                 <td className="text-start text-sm" >{record.order.makerAmount}</td>
                                 <td className="text-red-500 text-end text-sm">$1,876.19</td>

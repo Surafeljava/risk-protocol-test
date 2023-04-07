@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import CardItem from './CardItem';
-import { FiSearch } from "react-icons/fi";
 import Link from 'next/link';
 
 import { constants } from './constants';
@@ -15,13 +14,7 @@ export default function Home() {
         <div className='text-lg text-primary mb-2'>
           Please choose pairs from the list below
         </div>
-        {/* <div className="flex flex-row w-full bg-slate-100 rounded-full items-center mb-4">
-            <input type='text' placeholder="0x0e4drf..." className="px-4 py-3 flex-grow bg-slate-100 rounded-full" />
-            <button className='px-6 flex flex-row items-center gap-2'>
-              <FiSearch className='text-primary-dark text-xl'/>
-              <div className='text-lg text-primary font-medium'> Search </div>
-            </button>
-        </div> */}
+
         <div className='flex flex-row w-full flex-wrap'>
           {constants.addresses.map((item) => {
             return (
