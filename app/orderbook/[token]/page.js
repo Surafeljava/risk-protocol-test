@@ -37,7 +37,7 @@ export default async function OrderBook({params, searchParams}) {
                     </tr>
                     {data.bids.records.map((record) => {
                         return (
-                            <tr key={record.metaData.orderHash} className="h-8 py-2 hover:bg-slate-700 duration-200">
+                            <tr key={record.metaData.orderHash} className="h-8 py-2 hover:bg-slate-800 duration-200">
                                 <td>
                                     <div className="text-green-400 text-sm">
                                         $1,876.19
@@ -58,7 +58,7 @@ export default async function OrderBook({params, searchParams}) {
                     </tr>
                     {data.asks.records.map((record) => {
                         return (
-                            <tr key={record.metaData.orderHash} className="h-8 py-2 hover:bg-slate-700 duration-200">
+                            <tr key={record.metaData.orderHash} className="h-8 py-2 hover:bg-slate-800 duration-200">
                                 <td className="text-start text-sm" >{record.order.takerAmount}</td>
                                 <td className="text-start text-sm" >{record.order.makerAmount}</td>
                                 <td className="text-red-500 text-end text-sm">$1,876.19</td>
